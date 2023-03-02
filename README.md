@@ -20,7 +20,7 @@
     Overall, the face recognition app is a game-changing technology that can streamline attendance taking and improve the overall efficiency and effectiveness of educational institutions. 
 
  
-![Getting Started](./7.Documentaion/home.jpeg)
+<img src="./7.Documentation/home.jpeg" alt="home">
 
 2. ### Add New Student Page 
 
@@ -60,7 +60,7 @@
 
     The app stores the image file and the associated name in a way that will allow it to be used for attendance tracking later. 
 
-![Getting Started]r(./7.Documentaion/add_student.jpeg)
+<img src="./7.Documentation/add_student.jpeg" alt="add student">
 
 
 3. ### Attendance with camera Page 
@@ -94,7 +94,8 @@
     - When the student clicks the "Stop Taking Attendance" button, the app saves the current attendance sheet to a or server.
 
 
-![Getting Started](./7.Documentaion/attendance_with_camera.jpeg)
+
+<img src="./7.Documentation/attendance_with_camera.jpeg" alt="attendance">
 
 
 4. ### Manual Attendance Page 
@@ -107,4 +108,6 @@
 
     - You can then Add record manually in the selected sheet 
 
-![Getting Started](./7.Documentaion/manual_attendance.jpeg)
+
+
+<img src="./7.Documentation/manual_attendance.jpeg" alt="manual attendance">
