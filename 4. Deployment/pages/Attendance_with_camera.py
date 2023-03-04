@@ -21,7 +21,7 @@ st.write("---")
 
 
 saved_df = pd.read_csv(
-    "D:\\Nourhan\\ApplAi-Attendance System\\Attendance-System-Project\\5. Encodings\\encodings.csv")
+    r"5. Encodings\\encodings.csv")
 en = saved_df["Encodings"]
 n = saved_df["Persons"]
 
@@ -51,7 +51,7 @@ def detect_known_faces(img, image_encodings=e, persons=n):
     return fc, fn
 
 
-path = "D:\\Nourhan\\ApplAi-Attendance System\\Attendance-System-Project\\6. Attendence\\With_Camera\\"
+path = "6. Attendence\\With_Camera\\"
 d_l = glob.glob(path+"*.csv")
 for i in range(len(d_l)):
     d_l[i] = d_l[i].split("\\")[-1].split(".")[0]
@@ -64,7 +64,7 @@ with st.expander("Create New Attendence Sheet"):
         date = now.strftime("%d-%m-%Y")
         df = pd.DataFrame(columns=['Date', 'Time', 'Name', 'Status'])
         name_of_attendence_sheet = name_of_attendence_sheet+" "+str(date)
-        df.to_csv("D:\\Nourhan\\ApplAi-Attendance System\\Attendance-System-Project\\6. Attendence\\With_Camera\\" +
+        df.to_csv("6. Attendence\\With_Camera\\" +
                   name_of_attendence_sheet+".csv", index=False)
 
 with st.expander("View Sheets"):
@@ -89,7 +89,7 @@ field_names = ['Date', 'Time', 'Name', 'Status']
 now = datetime.now()
 date = now.strftime("%d-%m-%Y")
 time = now.strftime("%H:%M:%S")
-df = pd.read_csv("D:\\Nourhan\\ApplAi-Attendance System\\Attendance-System-Project\\6. Attendence\\With_Camera\\" +
+df = pd.read_csv("6. Attendence\\With_Camera\\" +
                  name_of_attendence_sheet+".csv")
 while start:
     _, frame = camera.read()
@@ -103,7 +103,7 @@ while start:
             cv2.rectangle(frame, (x1*4, y1*4), (x2*4, y2*4), (0, 0, 200), 4)
             new_row = {'Date': date, 'Time': time,
                        'Name': name, 'Status': 'Present'}
-            with open("D:\\Nourhan\\ApplAi-Attendance System\\Attendance-System-Project\\6. Attendence\\With_Camera\\" + name_of_attendence_sheet+".csv", 'a') as csv_file:
+            with open("6. Attendence\\With_Camera\\" + name_of_attendence_sheet+".csv", 'a') as csv_file:
                 dict_object = csv.DictWriter(csv_file, fieldnames=field_names)
                 dict_object.writerow(new_row)
     if (cv2.waitKey(20) & 0xFF == ord('q')) or stop:

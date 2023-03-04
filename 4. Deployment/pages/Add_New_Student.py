@@ -42,7 +42,7 @@ with st.container():
     with c1:
         if st.button("Save Student"):
             if filled:
-                path = "D:\\Nourhan\\ApplAi-Attendance System\\Attendance-System-Project\\1. Dataset\\"+name+".jpg"
+                path = "1. Dataset\\"+name+".jpg"
                 height, width = cv2_img.shape[:2]
                 cv2_resized_img = cv2.resize(
                     cv2_img, (int(width/2), int(height/2)))
@@ -51,14 +51,14 @@ with st.container():
                 img = face_recognition.load_image_file(path)
                 img_encoding = face_recognition.face_encodings(img)[0]
                 df = pd.read_csv(
-                    "D:\\Nourhan\\ApplAi-Attendance System\\Attendance-System-Project\\5. Encodings\\encodings.csv")
+                    "5. Encodings\\encodings.csv")
                 en = df["Encodings"].tolist()
                 n = df["Persons"].tolist()
                 en.append(img_encoding)
                 n.append(name)
                 df = pd.DataFrame({"Persons": n, "Encodings": en})
                 df.to_csv(
-                    "D:\\Nourhan\\ApplAi-Attendance System\\Attendance-System-Project\\5. Encodings\\encodings.csv", index=False)
+                    "5. Encodings\\encodings.csv", index=False)
                 st.write("Student Added")
             else:
                 st.warning("Please Enter Student Name")

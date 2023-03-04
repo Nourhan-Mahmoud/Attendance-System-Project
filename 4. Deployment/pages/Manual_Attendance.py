@@ -18,8 +18,7 @@ with st.expander("Create New Attendence Sheet"):
         date = now.strftime("%d-%m-%Y")
         df = pd.DataFrame(columns=['Date', 'Time', 'Name', 'Status'])
         sheet = name_of_attendence_sheet+" "+str(date)
-        df.to_csv("D:\\Nourhan\\ApplAi-Attendance System\\Attendance-System-Project\\6. Attendence" +
-                  sheet+".csv", index=False)
+        df.to_csv("6. Attendence" + sheet+ ".csv", index=False)
 
 
 # datetime object containing current date and time
@@ -27,7 +26,7 @@ now = datetime.now()
 date = now.strftime("%d-%m-%Y")
 time = now.strftime("%H:%M:%S")
 
-path = "D:\\Nourhan\\ApplAi-Attendance System\\Attendance-System-Project\\6. Attendence\\Manual\\"
+path = r"6. Attendence\\Manual\\"
 
 tab1, tab2 = st.tabs(["View Sheet", "Add Record"])
 with tab1:

@@ -6,3 +6,4 @@ st.set_page_config(
     page_title="Attendance System", page_icon="📊", layout="wide"
 )
 st.image("logo.png")
+
